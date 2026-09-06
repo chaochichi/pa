@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานผลการปฏิบัติงานตามข้อตกลง (PA) - นางวิภาพร ธรรมวิเศษ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js สำหรับทำ Dashboard -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#374151',   // Gray-700
+                        secondary: '#4b5563', // Gray-600
+                        dark: '#1f2937',      // Gray-800
+                        accent: '#eab308',    // Yellow-500
+                        accentLight: '#fef08a',// Yellow-200
+                        accentHover: '#ca8a04' // Yellow-600
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar แบบมินิมอล */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3f4f6; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af; 
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #eab308; /* แถบสีเหลืองด้านบนการ์ด */
+        }
+        
+        .section-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans antialiased">
+
+    <nav class="bg-dark text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-chart-pie text-2xl mr-3 text-accent"></i>
+                    <span class="font-bold text-xl tracking-tight">รายงาน PA ๒๕๖๙</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="#profile" class="hover:text-dark hover:bg-accent transition-all px-4 py-2 rounded-md text-sm font-medium">ข้อมูลส่วนตัว</a>
+                    <a href="#workload" class="hover:text-dark hover:bg-accent transition-all px-4 py-2 rounded-md text-sm font-medium">ภาระงาน</a>
+                    <a href="#part1" class="hover:text-dark hover:bg-accent transition-all px-4 py-2 rounded-md text-sm font-medium">มาตรฐานตำแหน่ง</a>
+                    <a href="#part2" class="text-dark bg-accent hover:bg-accentHover transition-all px-4 py-2 rounded-md text-sm font-bold shadow-sm">ประเด็นท้าทาย (Dashboard)</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-accent focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 pb-3 px-2 pt-2 space-y-1 sm:px-3 shadow-inner">
+            <a href="#profile" class="block px-3 py-2 rounded-md text-base font-medium hover:text-dark hover:bg-accent">ข้อมูลส่วนตัว</a>
+            <a href="#workload" class="block px-3 py-2 rounded-md text-base font-medium hover:text-dark hover:bg-accent">ภาระงาน</a>
+            <a href="#part1" class="block px-3 py-2 rounded-md text-base font-medium hover:text-dark hover:bg-accent">มาตรฐานตำแหน่ง</a>
+            <a href="#part2" class="block px-3 py-2 rounded-md text-base font-medium text-dark bg-accent">ประเด็นท้าทาย</a>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-br from-gray-900 to-gray-700 text-white relative overflow-hidden shadow-md">
+        <!-- ตกแต่งพื้นหลัง -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-accent opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-accent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 flex flex-col md:flex-row items-center gap-10">
+            <!-- รูปโปรไฟล์ 1:1 -->
+            <div class="flex-shrink-0 z-10 fade-in">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-accent rounded-full transform translate-x-2 translate-y-2 opacity-50"></div>
+                    <img class="relative w-40 h-40 md:w-56 md:h-56 object-cover rounded-full border-4 border-white shadow-2xl" src="ChatGPT Image 3 มิ.ย. 2569 16_00_31.png" alt="Profile Picture" onerror="this.src='https://placehold.co/400x400/eab308/ffffff?text=Profile'">
+                </div>
+            </div>
+            
+            <!-- ข้อความส่วนหัว -->
+            <div class="text-center md:text-left fade-in z-10 flex-1">
+                <span class="inline-block py-1 px-3 rounded-full bg-gray-800 text-accent text-sm font-semibold tracking-wider mb-4 border border-gray-600">
+                    ปีงบประมาณ พ.ศ. ๒๕๖๙
+                </span>
+                <h1 class="text-3xl tracking-tight font-extrabold sm:text-4xl md:text-5xl leading-tight">
+                    แบบรายงานผล<br>
+                    <span class="text-accent">การปฏิบัติงานตามข้อตกลง (PA)</span>
+                </h1>
+                <p class="mt-4 text-base text-gray-300 sm:text-lg max-w-2xl mx-auto md:mx-0">
+                    สำหรับข้าราชการครูและบุคลากรทางการศึกษา<br>
+                    รอบการประเมิน: ๑ ตุลาคม ๒๕๖๘ - ๓๐ กันยายน ๒๕๖๙
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-16">
+
+        <section id="profile" class="fade-in scroll-mt-24">
+            <div class="flex items-center mb-8">
+                <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-dark mr-3">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-dark">ข้อมูลผู้รับการประเมิน</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8 section-card">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-5">
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-accent">
+                                <i class="fas fa-signature text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">ชื่อ-สกุล</p>
+                                <p class="text-lg font-bold text-dark">นางวิภาพร ธรรมวิเศษ</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-accent">
+                                <i class="fas fa-id-badge text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">ตำแหน่ง / วิทยฐานะ</p>
+                                <p class="text-lg font-bold text-dark">ครู / <span class="text-primary font-medium">ครูชำนาญการ</span></p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-accent">
+                                <i class="fas fa-school text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">สถานศึกษา</p>
+                                <p class="text-lg font-bold text-dark">โรงเรียนบ้านโคกม่วย</p>
+                                <p class="text-sm text-gray-600">สพป.หนองบัวลำภู เขต ๑</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-5">
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-accent">
+                                <i class="fas fa-graduation-cap text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">คุณวุฒิการศึกษา</p>
+                                <p class="text-base font-bold text-dark">การศึกษาบัณฑิต (กศ.บ.)</p>
+                                <p class="text-sm text-gray-600">สาขาวิชาสังคมศึกษา</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-accent">
+                                <i class="fas fa-wallet text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">อันดับ / อัตราเงินเดือน</p>
+                                <p class="text-lg font-bold text-dark">ค.ศ. ๒ / ๓๔,๙๖๐ บาท</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-accent">
+                                <i class="fas fa-calendar-check text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">เริ่มรับราชการครู</p>
+                                <p class="text-lg font-bold text-dark">๘ กุมภาพันธ์ พ.ศ. ๒๕๕๙</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="workload" class="fade-in scroll-mt-24">
+            <div class="flex items-center mb-8">
+                <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-dark mr-3">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-dark">ส่วนที่ ๑: ภาระงานและมาตรฐานตำแหน่ง</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden section-card p-6 md:p-8">
+                <h3 class="text-xl font-bold mb-6 text-dark flex items-center border-b border-gray-200 pb-3">
+                    <i class="fas fa-clock text-accent mr-3"></i> ภาระงานสอนและงานที่ได้รับมอบหมาย
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Teaching Hours -->
+                    <div class="bg-gray-50 rounded-lg p-5 border border-gray-100">
+                        <h4 class="font-bold text-dark mb-4 flex items-center">
+                            <span class="bg-accent text-dark w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">1</span>
+                            ชั่วโมงตามตารางสอน (๒๔ ชม./สัปดาห์)
+                        </h4>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                <span class="flex items-center"><i class="fas fa-book text-gray-400 mr-2 text-xs"></i> ภาษาไทย, คณิตศาสตร์ (ป.๔)</span> 
+                                <span class="font-bold text-dark bg-yellow-100 px-2 py-1 rounded">วิชาละ ๕ ชม.</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                <span class="flex items-center"><i class="fas fa-flask text-gray-400 mr-2 text-xs"></i> วิทย์, สังคม, อังกฤษ (ป.๔)</span> 
+                                <span class="font-bold text-dark bg-yellow-100 px-2 py-1 rounded">วิชาละ ๒ ชม.</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                <span class="flex items-center"><i class="fas fa-palette text-gray-400 mr-2 text-xs"></i> ศิลปะ, การงานฯ, ประวัติ, สุขศึกษา ฯลฯ</span> 
+                                <span class="font-bold text-dark bg-yellow-100 px-2 py-1 rounded">วิชาละ ๑ ชม.</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-1">
+                                <span class="flex items-center"><i class="fas fa-campground text-gray-400 mr-2 text-xs"></i> กิจกรรมพัฒนาผู้เรียน</span> 
+                                <span class="font-bold text-dark bg-yellow-100 px-2 py-1 rounded">๒ ชม.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Other Works -->
+                    <div class="space-y-5">
+                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-100 border-l-4 border-l-gray-400">
+                            <h4 class="font-bold text-dark mb-2 text-sm">งานส่งเสริมและสนับสนุนการจัดการเรียนรู้ (๒ ชม.)</h4>
+                            <p class="text-sm text-gray-600">- กิจกรรมส่งเสริมการอ่าน และ ส่งเสริมคุณธรรม จริยธรรม</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-100 border-l-4 border-l-gray-500">
+                            <h4 class="font-bold text-dark mb-2 text-sm">งานพัฒนาคุณภาพการศึกษา (๕ ชม.)</h4>
+                            <p class="text-sm text-gray-600">- หัวหน้าฝ่ายบริหารงานวิชาการ (๒ ชม.)<br>- หัวหน้ากลุ่มสาระฯ สังคมศึกษาฯ (๓ ชม.)</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-100 border-l-4 border-l-gray-600">
+                            <h4 class="font-bold text-dark mb-2 text-sm">งานตอบสนองนโยบายและจุดเน้น (๒ ชม.)</h4>
+                            <p class="text-sm text-gray-600">- กิจกรรมลดเวลาเรียนเพิ่มเวลารู้</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="part1" class="fade-in scroll-mt-24">
+            <h3 class="text-xl font-bold mb-4 text-dark pl-2">ผลการประเมินการพัฒนางานตามข้อตกลง</h3>
+            
+            <div class="space-y-4">
+                <!-- 1.1 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-lg bg-gray-50 hover:bg-yellow-50 focus:outline-none flex justify-between items-center transition-colors" onclick="toggleAccordion('acc-1')">
+                        <span class="text-dark"><i class="fas fa-chalkboard-teacher text-accent mr-3"></i> ด้านที่ ๑ ด้านการจัดการเรียนรู้ (๑.๑ - ๑.๘)</span>
+                        <i id="icon-1" class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div id="acc-1" class="hidden px-6 py-5 bg-white space-y-4 border-t border-gray-100">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-gray-50 rounded border border-gray-100">
+                                <h4 class="font-bold text-dark text-sm mb-1">๑.๑ สร้างและหรือพัฒนาหลักสูตร</h4>
+                                <p class="text-sm text-gray-600">ออกแบบหน่วยการเรียนรู้ ผู้เรียนร้อยละ ๘๐ มีผลสัมฤทธิ์สูงขึ้น</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded border border-gray-100">
+                                <h4 class="font-bold text-dark text-sm mb-1">๑.๒ - ๑.๓ การออกแบบและจัดกิจกรรมการเรียนรู้</h4>
+                                <p class="text-sm text-gray-600">ใช้รูปแบบ ๕ Steps เน้นการปฏิบัติ ผลสัมฤทธิ์ผ่านเกณฑ์ร้อยละ ๘๐</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded border border-gray-100">
+                                <h4 class="font-bold text-dark text-sm mb-1">๑.๔ - ๑.๕ สื่อ นวัตกรรม และการวัดประเมินผล</h4>
+                                <p class="text-sm text-gray-600">สร้างสื่อบัตรคำ ประเมินตามสภาพจริง (K, P, A) ผ่านเกณฑ์ร้อยละ ๘๐</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded border border-gray-100">
+                                <h4 class="font-bold text-dark text-sm mb-1">๑.๖ - ๑.๘ วิจัย บรรยากาศ และคุณลักษณะ</h4>
+                                <p class="text-sm text-gray-600">ทำวิจัยเรื่อง คำเป็นคำตาย จัดบรรยากาศกระตุ้นการคิด ปลูกฝังคุณธรรม</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2.1 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-lg bg-gray-50 hover:bg-yellow-50 focus:outline-none flex justify-between items-center transition-colors" onclick="toggleAccordion('acc-2')">
+                        <span class="text-dark"><i class="fas fa-hands-helping text-accent mr-3"></i> ด้านที่ ๒ ด้านการส่งเสริมและสนับสนุน (๒.๑ - ๒.๔)</span>
+                        <i id="icon-2" class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div id="acc-2" class="hidden px-6 py-5 bg-white space-y-4 border-t border-gray-100">
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-3"></i> <div><strong class="text-dark">จัดทำข้อมูลสารสนเทศ:</strong> จัดทำ ปพ.๕ ผู้เรียนร้อยละ ๑๐๐ ได้รับประโยชน์</div></li>
+                            <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-3"></i> <div><strong class="text-dark">ระบบดูแลช่วยเหลือ:</strong> ออกเยี่ยมบ้าน คัดกรอง ช่วยเหลือทั่วถึง</div></li>
+                            <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-3"></i> <div><strong class="text-dark">งานวิชาการ/อื่นๆ:</strong> รับผิดชอบโครงการวิถีพุทธ สุจริต สีขาว</div></li>
+                            <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-3"></i> <div><strong class="text-dark">ประสานความร่วมมือ:</strong> ประชุมผู้ปกครอง ภาคีเครือข่ายรับรู้และให้ความร่วมมือ</div></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3.1 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-lg bg-gray-50 hover:bg-yellow-50 focus:outline-none flex justify-between items-center transition-colors" onclick="toggleAccordion('acc-3')">
+                        <span class="text-dark"><i class="fas fa-award text-accent mr-3"></i> ด้านที่ ๓ ด้านการพัฒนาตนเองและวิชาชีพ (๓.๑ - ๓.๓)</span>
+                        <i id="icon-3" class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div id="acc-3" class="hidden px-6 py-5 bg-white space-y-4 border-t border-gray-100">
+                        <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-accent">
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                พัฒนาตนเองอย่างเป็นระบบ (อบรม Soft Power, AI) ร่วมชุมชนแห่งการเรียนรู้ (PLC) เพื่อแก้ปัญหาการสอน 
+                                และนำความรู้มาประยุกต์ใช้บูรณาการ จนได้รับ <strong class="text-dark">รางวัลรองชนะเลิศ อันดับ 1 ระดับดีเยี่ยม (ครูผู้สอน) กิจกรรมบริษัทสร้างการดี</strong> 
+                                ส่งผลให้นักเรียนร้อยละ ๘๐ มีผลสัมฤทธิ์ผ่านเกณฑ์และมีความพึงพอใจ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="part2" class="fade-in scroll-mt-24 mb-10">
+            <div class="flex items-center mb-8">
+                <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-dark mr-3">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-dark">ส่วนที่ ๒: ประเด็นท้าทาย (Performance Dashboard)</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden section-card p-6 md:p-8">
+                
+                <!-- หัวข้อประเด็นท้าทาย -->
+                <div class="bg-dark text-white p-5 rounded-lg mb-8 shadow-inner">
+                    <h3 class="text-lg md:text-xl font-bold text-center leading-relaxed">
+                        การพัฒนาผลสัมฤทธิ์ทางการเรียน รายวิชาภาษาไทย เรื่อง คำเป็น คำตาย <br class="hidden md:block">
+                        ชั้นประถมศึกษาปีที่ ๔ โดยใช้รูปแบบการสอนแบบ <span class="text-accent">๕ Steps</span>
+                    </h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <!-- สภาพปัญหาและวิธีการ -->
+                    <div>
+                        <h4 class="font-bold text-lg text-dark mb-3 border-b border-gray-200 pb-2"><i class="fas fa-search text-gray-400 mr-2"></i> สภาพปัญหาและแนวทาง</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            นักเรียนขาดความรู้ความเข้าใจเรื่องคำเป็นคำตาย ทำให้ผลประเมินไม่ผ่านเกณฑ์ร้อยละ ๘๐ จึงนำรูปแบบ Active Learning (๕ Steps) มาใช้แก้ไขปัญหา
+                        </p>
+                        <h4 class="font-bold text-lg text-dark mb-3 border-b border-gray-200 pb-2"><i class="fas fa-bullseye text-gray-400 mr-2"></i> เป้าหมายเชิงประจักษ์</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li><strong class="text-dark">เชิงปริมาณ:</strong> นร.ร้อยละ ๘๐ ผ่านเกณฑ์ประเมินสถานศึกษา</li>
+                            <li><strong class="text-dark">เชิงคุณภาพ:</strong> นร.มีพฤติกรรมใฝ่รู้ ทักษะ Active Learning สูงขึ้น</li>
+                        </ul>
+                    </div>
+
+                    <!-- Stat Cards สรุปข้อมูลแทนการใช้ตารางรายชื่อ (PDPA) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg flex flex-col justify-center text-center">
+                            <span class="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">กลุ่มเป้าหมาย</span>
+                            <span class="text-3xl font-extrabold text-dark">๖ <span class="text-base font-normal text-gray-500">คน</span></span>
+                        </div>
+                        <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg flex flex-col justify-center text-center">
+                            <span class="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">คะแนนเต็ม</span>
+                            <span class="text-3xl font-extrabold text-dark">๒๐ <span class="text-base font-normal text-gray-500">คะแนน</span></span>
+                        </div>
+                        <div class="bg-gray-100 border-l-4 border-gray-400 p-4 rounded-lg flex flex-col justify-center text-center">
+                            <span class="text-gray-600 text-xs font-bold mb-1">เฉลี่ยก่อนเรียน</span>
+                            <span class="text-2xl font-bold text-gray-700">๔.๘๓</span>
+                        </div>
+                        <div class="bg-accentLight border-l-4 border-accent p-4 rounded-lg flex flex-col justify-center text-center shadow-sm">
+                            <span class="text-dark text-xs font-bold mb-1">เฉลี่ยหลังเรียน</span>
+                            <span class="text-2xl font-bold text-dark">๑๕.๘๓</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart.js Dashboard (PDPA Compliant - ไม่แสดงชื่อนักเรียน) -->
+                <div class="mt-8 border-t border-gray-200 pt-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="font-bold text-lg text-dark">
+                            <i class="fas fa-chart-bar text-accent mr-2"></i> กราฟเปรียบเทียบผลสัมฤทธิ์ทางการเรียน
+                        </h4>
+                        <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full border border-green-200">
+                            <i class="fas fa-arrow-up mr-1"></i> พัฒนาการเฉลี่ย +๑๑.๐๐
+                        </span>
+                    </div>
+                    
+                    <!-- Canvas สำหรับวาดกราฟ -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm relative h-72 md:h-96 w-full">
+                        <canvas id="scoreChart"></canvas>
+                    </div>
+                    <p class="text-xs text-center text-gray-400 mt-4">* ข้อมูลถูกจัดทำในรูปแบบนิรนาม (Anonymized Data) เพื่อเป็นไปตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล (PDPA)</p>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-gray-300 py-10 mt-12 border-t-4 border-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <p class="font-bold text-lg text-white mb-1">รายงานผลการปฏิบัติงานตามข้อตกลง (PA) พ.ศ. ๒๕๖๙</p>
+                <p class="text-sm">นางวิภาพร ธรรมวิเศษ | โรงเรียนบ้านโคกม่วย</p>
+            </div>
+            <div class="text-sm text-center md:text-right bg-gray-800 py-2 px-4 rounded-lg border border-gray-700">
+                <i class="fas fa-shield-alt text-accent mr-2"></i>
+                ขอรับรองว่ารายงานฉบับนี้เป็นความจริงทุกประการ
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Accordion functionality
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const iconId = 'icon-' + id.split('-')[1];
+            const icon = document.getElementById(iconId);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // ==========================================
+        // ตั้งค่า Chart.js สำหรับทำ Dashboard PDPA
+        // ==========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('scoreChart').getContext('2d');
+            
+            // ข้อมูลจำลองแบบไม่ระบุชื่อตน (PDPA)
+            const labels = ['คนที่ ๑', 'คนที่ ๒', 'คนที่ ๓', 'คนที่ ๔', 'คนที่ ๕', 'คนที่ ๖'];
+            const preTest = [4, 4, 5, 6, 6, 4];
+            const postTest = [15, 14, 16, 17, 18, 15];
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'ก่อนเรียน',
+                            data: preTest,
+                            backgroundColor: '#9ca3af', // Gray-400
+                            borderRadius: 4,
+                            barPercentage: 0.6,
+                            categoryPercentage: 0.8
+                        },
+                        {
+                            label: 'หลังเรียน',
+                            data: postTest,
+                            backgroundColor: '#eab308', // Yellow-500
+                            borderRadius: 4,
+                            barPercentage: 0.6,
+                            categoryPercentage: 0.8
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: {
+                                    family: "'Sarabun', sans-serif",
+                                    size: 14
+                                },
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            titleFont: { family: "'Sarabun', sans-serif", size: 14 },
+                            bodyFont: { family: "'Sarabun', sans-serif", size: 14 },
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.y + ' คะแนน';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 20,
+                            ticks: {
+                                font: { family: "'Sarabun', sans-serif" },
+                                stepSize: 5
+                            },
+                            grid: {
+                                color: '#f3f4f6',
+                                drawBorder: false
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: { family: "'Sarabun', sans-serif" }
+                            },
+                            grid: {
+                                display: false,
+                                drawBorder: false
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeOutQuart'
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

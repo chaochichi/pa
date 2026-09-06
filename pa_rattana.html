@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อตกลงในการพัฒนางาน (PA) - ครูรัตนา โคตรวิทย์</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sarabun', 'sans-serif'],
+                        heading: ['Kanit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0D9488', // Deep Turquoise
+                        secondary: '#2DD4BF', // Pastel Turquoise
+                        accent: '#FB923C', // Soft Orange for contrast
+                        turquoise: {
+                            50: '#F0FDFA',
+                            100: '#CCFBF1',
+                            200: '#99F6E4',
+                            300: '#5EEAD4',
+                            400: '#2DD4BF',
+                            500: '#14B8A6',
+                            600: '#0D9488',
+                            700: '#0F766E',
+                            800: '#115E59',
+                            900: '#134E4A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Sarabun', sans-serif; background-color: #F0FDFA; }
+        h1, h2, h3, h4, h5, h6, .nav-tab { font-family: 'Kanit', sans-serif; }
+        
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-tab.active {
+            border-bottom: 4px solid #0D9488;
+            color: #0D9488;
+            font-weight: 600;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F0FDFA; }
+        ::-webkit-scrollbar-thumb { background: #5EEAD4; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2DD4BF; }
+    </style>
+    <script>
+        // ย้ายฟังก์ชันมาไว้ใน head เพื่อให้โหลดพร้อมใช้งานทันที ป้องกัน ReferenceError
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            const selectedContent = document.getElementById('content-' + tabId);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+
+            const selectedTab = document.getElementById('tab-' + tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+        }
+    </script>
+</head>
+<body class="text-slate-800 antialiased bg-turquoise-50">
+
+    <header class="bg-gradient-to-r from-primary to-turquoise-500 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-center md:text-left mb-6 md:mb-0">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2 font-heading text-accent">รายงานผลการปฏิบัติงานตามข้อตกลง (PA)</h1>
+                    <h2 class="text-xl md:text-2xl font-medium mb-1">และสรุปผลการประเมินการพัฒนางานตามข้อตกลง (PA)</h2>
+                    <p class="text-turquoise-100 text-lg">สำหรับข้าราชการครูและบุคลากรทางการศึกษา ตำแหน่งครู วิทยฐานะ ชำนาญการพิเศษ</p>
+                    <p class="text-turquoise-100 mt-1">ประจำปีงบประมาณ พ.ศ. ๒๕๖๙ (๑ ตุลาคม ๒๕๖๘ - ๓๐ กันยายน ๒๕๖๙)</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center md:text-left shadow-xl max-w-sm w-full">
+                    <div class="flex items-center justify-center md:justify-start gap-4 mb-3">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center text-primary text-3xl shadow-inner overflow-hidden border-2 border-white">
+                            <img src="ChatGPT Image 5 ก.ย. 2569 22_06_20.png" alt="ครูรัตนา โคตรวิทย์" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold font-heading">นางสาวรัตนา โคตรวิทย์</h3>
+                            <p class="text-turquoise-100">ตำแหน่ง ครู วิทยฐานะ ชำนาญการพิเศษ</p>
+                        </div>
+                    </div>
+                    <div class="text-sm text-turquoise-50 mt-4 space-y-1">
+                        <p><i class="fa-solid fa-school w-5"></i> โรงเรียนบ้านโคกม่วย สพป.นภ.๑</p>
+                        <p><i class="fa-solid fa-users-class w-5"></i> ห้องเรียนวิชาสามัญหรือวิชาพื้นฐาน</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex overflow-x-auto hide-scroll-bar py-1 justify-start md:justify-center">
+                <button onclick="switchTab('profile')" id="tab-profile" class="nav-tab active px-6 py-4 text-gray-500 hover:text-primary whitespace-nowrap transition-colors flex items-center gap-2 text-lg">
+                    <i class="fa-solid fa-address-card"></i> ข้อมูล & ภาระงาน
+                </button>
+                <button onclick="switchTab('part1')" id="tab-part1" class="nav-tab px-6 py-4 text-gray-500 hover:text-primary whitespace-nowrap transition-colors flex items-center gap-2 text-lg">
+                    <i class="fa-solid fa-list-check"></i> ส่วนที่ ๑: มาตรฐานตำแหน่ง
+                </button>
+                <button onclick="switchTab('part2-1')" id="tab-part2-1" class="nav-tab px-6 py-4 text-gray-500 hover:text-primary whitespace-nowrap transition-colors flex items-center gap-2 text-lg">
+                    <i class="fa-solid fa-book-open-reader"></i> ประเด็นท้าทาย ๑ (การอ่าน)
+                </button>
+                <button onclick="switchTab('part2-2')" id="tab-part2-2" class="nav-tab px-6 py-4 text-gray-500 hover:text-primary whitespace-nowrap transition-colors flex items-center gap-2 text-lg">
+                    <i class="fa-solid fa-leaf"></i> ประเด็นท้าทาย ๒ (Soft Power)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Tab 1: Profile & Workload -->
+        <div id="content-profile" class="tab-content active">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+                <h2 class="text-2xl font-bold font-heading text-primary mb-6 border-l-4 border-accent pl-4">๑. ภาระงานตามที่ ก.ค.ศ. กำหนด</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Teaching Hours -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2 text-slate-700">
+                            <i class="fa-solid fa-person-chalkboard text-secondary"></i> ๑.๑ ชั่วโมงสอนตามตารางสอน (๒๕ ชั่วโมง/สัปดาห์)
+                        </h3>
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                            <ul class="space-y-3">
+                                <li class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                    <span class="font-medium text-slate-700">ภาษาไทย</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๕ ชม./สัปดาห์</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                    <span class="font-medium text-slate-700">คณิตศาสตร์</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๕ ชม./สัปดาห์</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                    <span class="font-medium text-slate-700">วิทยาศาสตร์</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๒ ชม./สัปดาห์</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                    <span class="font-medium text-slate-700">ภาษาอังกฤษ</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๒ ชม./สัปดาห์</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                    <span class="font-medium text-slate-700">สังคมศึกษา ศาสนาและวัฒนธรรม</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๒ ชม./สัปดาห์</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                    <span class="font-medium text-slate-700">สุขศึกษาและพลศึกษา</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๒ ชม./สัปดาห์</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                    <span class="font-medium text-slate-700">การงานอาชีพ</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๑ ชม./สัปดาห์</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                    <span class="font-medium text-slate-700">ศิลปะ</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๒ ชม./สัปดาห์</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                    <span class="font-medium text-slate-700">ลูกเสือ-เนตรนารีฯ</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๑ ชม./สัปดาห์</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                    <span class="font-medium text-slate-700">กิจกรรมชุมนุม</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๑ ชม./สัปดาห์</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-1">
+                                    <span class="font-medium text-slate-700">วิชาเพิ่มเติม (ภาษาไทยเสริม)</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">๑ ชม./สัปดาห์</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Other Works -->
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 flex items-center gap-2 text-slate-700">
+                                <i class="fa-solid fa-hands-holding-child text-secondary"></i> ๑.๒ งานส่งเสริมและสนับสนุนการจัดการเรียนรู้
+                            </h3>
+                            <div class="bg-blue-50 text-blue-800 p-4 rounded-xl flex justify-between items-center">
+                                <span>ปฏิบัติหน้าที่งานส่งเสริมและสนับสนุนการจัดการเรียนรู้</span>
+                                <span class="bg-white text-blue-800 text-sm font-bold px-3 py-1 rounded-full shadow-sm">๓ ชม./สัปดาห์</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 flex items-center gap-2 text-slate-700">
+                                <i class="fa-solid fa-school-flag text-secondary"></i> ๑.๓ งานพัฒนาคุณภาพการจัดการศึกษาของสถานศึกษา
+                            </h3>
+                            <div class="bg-blue-50 text-blue-800 p-4 rounded-xl flex justify-between items-center">
+                                <span>มีส่วนร่วมในการพัฒนาคุณภาพการศึกษาของสถานศึกษา</span>
+                                <span class="bg-white text-blue-800 text-sm font-bold px-3 py-1 rounded-full shadow-sm">๓ ชม./สัปดาห์</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 flex items-center gap-2 text-slate-700">
+                                <i class="fa-solid fa-bullseye text-secondary"></i> ๑.๔ งานตอบสนองนโยบายและจุดเน้น
+                            </h3>
+                            <div class="bg-blue-50 text-blue-800 p-4 rounded-xl flex justify-between items-center">
+                                <span>ปฏิบัติงานตอบสนองนโยบายกระทรวงศึกษาธิการ สพฐ. ฯลฯ</span>
+                                <span class="bg-white text-blue-800 text-sm font-bold px-3 py-1 rounded-full shadow-sm">๒ ชม./สัปดาห์</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Part 1 Standards -->
+        <div id="content-part1" class="tab-content">
+            <div class="mb-8 flex flex-col md:flex-row md:justify-between md:items-end">
+                <div>
+                    <h2 class="text-3xl font-bold font-heading text-primary mb-2">ส่วนที่ ๑: รายงานผลการประเมินตามมาตรฐานตำแหน่ง</h2>
+                    <p class="text-slate-600">สรุปเปรียบเทียบผลการปฏิบัติงานจริง (รายงาน) กับเป้าหมายที่ตั้งไว้ (ข้อตกลง)</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold shadow-sm border border-green-200">
+                        <i class="fa-solid fa-check-circle text-green-600 mr-2"></i>ประเมินผล: บรรลุและทะลุเป้าหมายทุกตัวชี้วัด
+                    </span>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Domain 1 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="bg-blue-600 px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-book"></i> ๑. ด้านการจัดการเรียนรู้
+                        </h3>
+                        <span class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"><i class="fa-solid fa-check"></i> สำเร็จตามวัตถุประสงค์</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-slate-600">
+                                <thead class="text-xs text-slate-700 uppercase bg-slate-50 border-b border-slate-200">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 w-1/3">ลักษณะงาน / ตัวชี้วัด</th>
+                                        <th scope="col" class="px-6 py-3 w-1/3 text-blue-700">เป้าหมาย (ตามข้อตกลง PA)</th>
+                                        <th scope="col" class="px-6 py-3 w-1/3 text-green-700">ผลการปฏิบัติจริง (ตามรายงาน)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="px-6 py-4 font-medium text-slate-900 align-top">การออกแบบและจัดการเรียนรู้</td>
+                                        <td class="px-6 py-4 align-top">ผู้เรียน <span class="font-bold">๘๐-๙๕%</span> ได้รับการพัฒนาตามหลักสูตร และมีคะแนนเฉลี่ยไม่ต่ำกว่า ๘๐</td>
+                                        <td class="px-6 py-4 align-top bg-green-50/50"><i class="fa-solid fa-arrow-trend-up text-green-500 mr-1"></i> ผู้เรียน <strong class="text-green-700">๑๐๐%</strong> ได้รับการพัฒนาทักษะ (สูงกว่าเป้า)</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="px-6 py-4 font-medium text-slate-900 align-top">สื่อ นวัตกรรม และการวัดผล</td>
+                                        <td class="px-6 py-4 align-top">ผู้เรียน <span class="font-bold">๙๐-๙๕%</span> ได้ใช้สื่อและได้รับการประเมินที่เที่ยงตรง</td>
+                                        <td class="px-6 py-4 align-top bg-green-50/50"><i class="fa-solid fa-arrow-trend-up text-green-500 mr-1"></i> ผู้เรียน <strong class="text-green-700">๑๐๐%</strong> ได้ใช้สื่อ (สูงกว่าเป้า) และ ๙๕% ผ่านเกณฑ์การประเมิน</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="px-6 py-4 font-medium text-slate-900 align-top">การวิจัย จัดบรรยากาศ และคุณลักษณะ</td>
+                                        <td class="px-6 py-4 align-top">ผู้เรียน <span class="font-bold">๙๐-๙๕%</span> ได้รับการแก้ปัญหา, มีส่วนร่วม, และมีคุณลักษณะอันพึงประสงค์ระดับดี</td>
+                                        <td class="px-6 py-4 align-top bg-green-50/50"><i class="fa-solid fa-arrow-trend-up text-green-500 mr-1"></i> ผู้เรียน <strong class="text-green-700">๑๐๐%</strong> ได้รับการแก้ปัญหาและมีคุณลักษณะระดับดี (สูงกว่าเป้า)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Domain 2 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="bg-secondary px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-hand-holding-heart"></i> ๒. ด้านการส่งเสริมและสนับสนุนการจัดการเรียนรู้
+                        </h3>
+                         <span class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"><i class="fa-solid fa-check"></i> สำเร็จตามวัตถุประสงค์</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-slate-600">
+                                <thead class="text-xs text-slate-700 uppercase bg-slate-50 border-b border-slate-200">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 w-1/3">ลักษณะงาน / ตัวชี้วัด</th>
+                                        <th scope="col" class="px-6 py-3 w-1/3 text-teal-700">เป้าหมาย (ตามข้อตกลง PA)</th>
+                                        <th scope="col" class="px-6 py-3 w-1/3 text-green-700">ผลการปฏิบัติจริง (ตามรายงาน)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="px-6 py-4 font-medium text-slate-900 align-top">ระบบดูแลช่วยเหลือผู้เรียน</td>
+                                        <td class="px-6 py-4 align-top">ผู้เรียน <span class="font-bold">๖๐-๙๐%</span> ได้รับการดูแลช่วยเหลือ และมีความรู้ผ่านเกณฑ์</td>
+                                        <td class="px-6 py-4 align-top bg-green-50/50"><i class="fa-solid fa-arrow-trend-up text-green-500 mr-1"></i> ผู้เรียน <strong class="text-green-700">๑๐๐%</strong> ได้รับการดูแลและผ่านเกณฑ์ (ทะลุเป้าหมายอย่างมาก)</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="px-6 py-4 font-medium text-slate-900 align-top">ปฏิบัติงานวิชาการ & ประสานความร่วมมือ</td>
+                                        <td class="px-6 py-4 align-top">ผู้เรียน <span class="font-bold">๘๐-๙๕%</span> มีผลสัมฤทธิ์สูงขึ้น และได้รับการดูแลจากผู้ปกครอง</td>
+                                        <td class="px-6 py-4 align-top bg-green-50/50"><i class="fa-solid fa-arrow-trend-up text-green-500 mr-1"></i> ผู้เรียน <strong class="text-green-700">๑๐๐%</strong> มีผลสัมฤทธิ์สูงขึ้นและได้รับความร่วมมือจากผู้ปกครอง (สูงกว่าเป้า)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Domain 3 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="bg-amber-500 px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-user-graduate"></i> ๓. ด้านการพัฒนาตนเองและวิชาชีพ
+                        </h3>
+                         <span class="bg-white/20 text-white text-sm px-3 py-1 rounded-full"><i class="fa-solid fa-check"></i> สำเร็จตามวัตถุประสงค์</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-slate-600">
+                                <thead class="text-xs text-slate-700 uppercase bg-slate-50 border-b border-slate-200">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 w-1/3">ลักษณะงาน / ตัวชี้วัด</th>
+                                        <th scope="col" class="px-6 py-3 w-1/3 text-amber-700">เป้าหมาย (ตามข้อตกลง PA)</th>
+                                        <th scope="col" class="px-6 py-3 w-1/3 text-green-700">ผลการปฏิบัติจริง (ตามรายงาน)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="px-6 py-4 font-medium text-slate-900 align-top">การพัฒนาตนเอง นวัตกรรม และ PLC</td>
+                                        <td class="px-6 py-4 align-top">ผู้เรียน <span class="font-bold">๘๐-๙๕%</span> ได้รับการพัฒนาด้วยวิธีที่หลากหลาย และตามแนวทางนวัตกรรม</td>
+                                        <td class="px-6 py-4 align-top bg-green-50/50"><i class="fa-solid fa-arrow-trend-up text-green-500 mr-1"></i> ผู้เรียน <strong class="text-green-700">๑๐๐%</strong> ได้รับการพัฒนาความสามารถและเรียนรู้ผ่านนวัตกรรมที่พัฒนาขึ้น (สูงกว่าเป้า)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Challenge 1 -->
+        <div id="content-part2-1" class="tab-content">
+             <div class="mb-6 flex flex-col md:flex-row md:justify-between md:items-start">
+                <div>
+                    <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full mb-3 inline-block">ประเด็นท้าทายที่ ๑</span>
+                    <h2 class="text-3xl font-bold font-heading text-primary mb-3">การใช้แนวการสอนแบบบันไดสี่ขั้น (อ.ศิวกานท์ ปทุมสูติ)</h2>
+                    <p class="text-xl text-slate-600 font-medium">กลุ่มเป้าหมาย: นักเรียนชั้นประถมศึกษาปีที่ ๑/๑ จำนวน ๘ คน</p>
+                </div>
+                 <div class="mt-4 md:mt-0 flex gap-2">
+                    <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold shadow-sm border border-green-200">
+                        <i class="fa-solid fa-check-circle text-green-600 mr-2"></i>บรรลุผลสำเร็จ
+                    </span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Problem Context -->
+                <div class="lg:col-span-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 h-fit">
+                    <div class="flex items-center gap-3 mb-4 text-red-600">
+                        <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
+                        <h3 class="text-xl font-bold font-heading">สภาพปัญหา (Pain Points)</h3>
+                    </div>
+                    <p class="text-slate-700 text-sm mb-4 leading-relaxed">
+                        การสอนภาษาไทย ป.๑ เป็นการปูพื้นฐานสำคัญ แต่นักเรียนเพิ่งผ่านชั้นอนุบาล ทำให้ประสบปัญหาเนื่องจากความซับซ้อนของภาษาไทย (พยัญชนะ สระ วรรณยุกต์ ตัวสะกด สระเปลี่ยนรูป) จากข้อมูลปี ๒๕๖๘ พบว่า:
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2 text-sm text-slate-700 bg-slate-50 p-2 rounded">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span>นักเรียน ๔๑.๑๘% (๗/๑๗ คน) จำพยัญชนะและเสียงไม่ได้</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700 bg-slate-50 p-2 rounded">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span>นักเรียน ๔๒.๘๖% (๗/๑๗ คน) จำสระได้ไม่ถึง ๕๐%</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700 bg-slate-50 p-2 rounded">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span>นักเรียน ๒๙.๔๑% (๕/๑๗ คน) ไม่เข้าใจวิธีสะกดคำ และอ่านอักษรนำไม่ได้</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700 bg-slate-50 p-2 rounded">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span>นักเรียน ๒๓.๕๓% (๔/๑๗ คน) ไม่เข้าใจสระลดรูป/เปลี่ยนรูป</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution (PDCA) -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-xl font-bold font-heading text-primary mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-gears"></i> วิธีดำเนินการให้บรรลุผล (PDCA)
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Plan -->
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">P</div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Plan (การวางแผน)</h4>
+                                    <p class="text-slate-600 text-sm">ศึกษาหลักสูตร, วิเคราะห์ผู้เรียน, จัดกลุ่ม (เก่ง กลาง อ่อน LD), ออกแบบหน่วย/แผนการเรียนรู้, สร้างสื่อและนวัตกรรม</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Do (4 Steps) -->
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">D</div>
+                                <div class="w-full">
+                                    <h4 class="font-bold text-lg mb-2">Do (การปฏิบัติ - บันได ๔ ขั้น)</h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <div class="bg-green-50 p-3 rounded-lg border border-green-100">
+                                            <span class="font-bold text-green-800">ขั้นที่ ๑: แจกลูก ให้ผูกจำ</span>
+                                            <p class="text-xs text-slate-600 mt-1">ฝึกอ่าน/เขียนพยัญชนะ สระ สะกดคำจากง่ายไปยาก</p>
+                                        </div>
+                                        <div class="bg-green-50 p-3 rounded-lg border border-green-100">
+                                            <span class="font-bold text-green-800">ขั้นที่ ๒: อ่านคำ ย้ำวิถี</span>
+                                            <p class="text-xs text-slate-600 mt-1">ให้นักเรียนฝึกสะกดคำและอ่านออกเสียงด้วยตนเอง</p>
+                                        </div>
+                                        <div class="bg-green-50 p-3 rounded-lg border border-green-100">
+                                            <span class="font-bold text-green-800">ขั้นที่ ๓: คัดลายมือ ซ้ำอีกที</span>
+                                            <p class="text-xs text-slate-600 mt-1">คัดคำที่ได้เรียนรู้ลงในสมุดจดบันทึก</p>
+                                        </div>
+                                        <div class="bg-green-50 p-3 rounded-lg border border-green-100">
+                                            <span class="font-bold text-green-800">ขั้นที่ ๔: เขียนตามคำบอก</span>
+                                            <p class="text-xs text-slate-600 mt-1">ฝึกเขียนตามคำบอกจากคำในบทเรียนทุกชั่วโมง</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Check & Act -->
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">C/A</div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Check & Act (ตรวจสอบและปรับปรุง)</h4>
+                                    <p class="text-slate-600 text-sm">ประเมินผลการเรียนรู้อย่างหลากหลาย วิเคราะห์ผู้เรียนจากผลประเมินเพื่อนำไปจัดกิจกรรมเสริม พัฒนา และต่อยอดเป็นรายบุคคล</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Outcomes Comparison -->
+                    <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
+                        <div class="bg-gradient-to-r from-blue-600 to-indigo-500 px-6 py-4 border-b border-blue-400/30">
+                            <h3 class="text-xl font-bold font-heading text-white flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-scale-balanced"></i> เปรียบเทียบผลลัพธ์: เป้าหมายตามข้อตกลง vs ผลการปฏิบัติจริง
+                            </h3>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-700">
+                            
+                            <!-- Goal (From PA Agreement) -->
+                            <div class="p-6 bg-slate-800 text-slate-300">
+                                <div class="flex items-center gap-2 mb-4 text-blue-400">
+                                    <i class="fa-regular fa-clipboard text-xl"></i>
+                                    <h4 class="font-bold text-lg">เป้าหมาย (ข้อตกลง PA)</h4>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <h5 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">เชิงปริมาณ</h5>
+                                        <ul class="space-y-2 text-sm list-none">
+                                            <li class="flex items-start gap-2"><i class="fa-solid fa-bullseye mt-1 text-slate-500 text-xs"></i> ผู้เรียน <strong class="text-white">๙๐%</strong> ได้รับการพัฒนาตามศักยภาพ</li>
+                                            <li class="flex items-start gap-2"><i class="fa-solid fa-bullseye mt-1 text-slate-500 text-xs"></i> ผู้เรียน <strong class="text-white">๘๐%</strong> มีทักษะการอ่านอยู่ในระดับ ดีขึ้นไป</li>
+                                            <li class="flex items-start gap-2"><i class="fa-solid fa-bullseye mt-1 text-slate-500 text-xs"></i> ผลสอบ RT เฉลี่ย ไม่ต่ำกว่าร้อยละ ๘๐</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pt-2">
+                                        <h5 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">เชิงคุณภาพ</h5>
+                                        <p class="text-sm text-slate-300">นักเรียนได้รับการพัฒนาทักษะการอ่านและเขียนอย่างมีประสิทธิภาพ</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Actual (From PA Report) -->
+                            <div class="p-6 bg-blue-50/5 relative overflow-hidden">
+                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/20 blur-2xl rounded-full"></div>
+                                
+                                <div class="flex items-center gap-2 mb-4 text-blue-400 relative z-10">
+                                    <i class="fa-solid fa-trophy text-xl text-amber-400"></i>
+                                    <h4 class="font-bold text-lg text-white">ผลลัพธ์จริง (รายงาน PA)</h4>
+                                </div>
+                                <div class="space-y-4 relative z-10">
+                                    <div>
+                                        <h5 class="text-sm font-semibold text-blue-400/80 uppercase tracking-wider mb-2">เชิงปริมาณ (ทะลุเป้าหมาย)</h5>
+                                        <ul class="space-y-3 text-sm list-none">
+                                            <li class="flex items-start gap-2 bg-blue-500/10 p-2 rounded border border-blue-500/20">
+                                                <i class="fa-solid fa-arrow-trend-up mt-1 text-blue-400"></i> 
+                                                <span class="text-blue-50">ผู้เรียน <strong class="text-blue-300 text-base">๑๐๐%</strong> ได้รับการพัฒนา <span class="text-xs bg-blue-600 text-white px-1.5 rounded ml-1">+๑๐%</span></span>
+                                            </li>
+                                            <li class="flex items-start gap-2 bg-blue-500/10 p-2 rounded border border-blue-500/20">
+                                                <i class="fa-solid fa-arrow-trend-up mt-1 text-blue-400"></i> 
+                                                <span class="text-blue-50">ผู้เรียน <strong class="text-blue-300 text-base">๑๐๐%</strong> มีทักษะการอ่านระดับดีขึ้นไป <span class="text-xs bg-blue-600 text-white px-1.5 rounded ml-1">+๒๐%</span></span>
+                                            </li>
+                                            <li class="flex items-start gap-2 bg-blue-500/10 p-2 rounded border border-blue-500/20">
+                                                <i class="fa-solid fa-check mt-1 text-green-400"></i> 
+                                                <span class="text-blue-50">ผลสอบ RT เฉลี่ยผ่านเกณฑ์ ไม่ต่ำกว่าร้อยละ ๘๐</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="pt-2">
+                                        <h5 class="text-sm font-semibold text-blue-400/80 uppercase tracking-wider mb-2">เชิงคุณภาพ (บรรลุครบถ้วน)</h5>
+                                        <p class="text-sm text-blue-50/80"><i class="fa-solid fa-check-circle text-green-400 mr-1"></i> นักเรียนได้รับการพัฒนาทักษะการอ่านและเขียนอย่างมีประสิทธิภาพด้วยแบบฝึกทักษะ</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="bg-slate-900/50 px-6 py-3 border-t border-slate-700 text-xs text-slate-400 flex items-center justify-between">
+                            <span><i class="fa-solid fa-folder-open mr-2"></i> ร่องรอย: แบบคัดกรอง, แบบบันทึกผลสัมฤทธิ์, ใบงาน</span>
+                            <span class="bg-green-900/50 text-green-400 px-2 py-1 rounded border border-green-800">ระดับความสำเร็จ: ดีเยี่ยม</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: Challenge 2 -->
+        <div id="content-part2-2" class="tab-content">
+            <div class="mb-6 flex flex-col md:flex-row md:justify-between md:items-start">
+                <div>
+                    <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full mb-3 inline-block">ประเด็นท้าทายที่ ๒ (Soft Power)</span>
+                    <h2 class="text-3xl font-bold font-heading text-primary mb-3">ปลูกผักสวนครัว : มะละกอ (Learning by Doing)</h2>
+                    <p class="text-xl text-slate-600 font-medium">เพื่อพัฒนาทักษะชีวิตและน้อมนำหลักปรัชญาของเศรษฐกิจพอเพียง</p>
+                    <p class="text-md text-slate-500 mt-1">กลุ่มเป้าหมาย: นักเรียนชั้นประถมศึกษาปีที่ ๑/๑ จำนวน ๘ คน</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex gap-2">
+                    <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold shadow-sm border border-green-200">
+                        <i class="fa-solid fa-check-circle text-green-600 mr-2"></i>บรรลุผลสำเร็จทะลุเป้าหมาย
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8">
+                <div class="bg-emerald-600 px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-seedling"></i> ความสอดคล้องนโยบาย & สภาพปัญหา
+                    </h3>
+                    <div class="flex flex-wrap gap-2 mt-3 md:mt-0">
+                        <span class="bg-white/20 text-white text-xs px-2 py-1 rounded border border-white/30">Learn to Earn</span>
+                        <span class="bg-white/20 text-white text-xs px-2 py-1 rounded border border-white/30">Soft Power (Food) ๕ ด้าน สพป.นภ.๑</span>
+                    </div>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-emerald-700 mb-2"><i class="fa-solid fa-bullseye mr-2"></i>ที่มาและความสำคัญ</h4>
+                        <p class="text-slate-700 text-sm leading-relaxed text-justify">
+                            ผู้เรียนมีความรู้พื้นฐานการปลูกพืชแต่ขาดประสบการณ์ลงมือปฏิบัติจริง และไม่เห็นความเชื่อมโยงกับทักษะอาชีพ โครงการนี้จึงนำ <strong>"มะละกอ"</strong> ซึ่งเป็นพืชสวนครัวสำคัญในวิถีชีวิตคนไทย (สอดคล้องกับ Soft Power ด้านอาหาร) มาเป็นฐานการเรียนรู้แบบบูรณาการ (วิทย์, คณิต, ไทย, การงานฯ) เปลี่ยนการรับความรู้เป็นการลงมือปฏิบัติจริง (Learning by Doing)
+                        </p>
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                        <h4 class="font-bold text-emerald-700 mb-2"><i class="fa-solid fa-book-open-reader mr-2"></i>การบูรณาการหลักสูตร</h4>
+                        <ul class="text-sm text-slate-700 space-y-2 list-disc list-inside">
+                            <li><strong>วิทยาศาสตร์/คณิตศาสตร์:</strong> การเจริญเติบโต การวัด การบันทึกผล</li>
+                            <li><strong>ภาษาไทย/เทคโนโลยี:</strong> การเล่าเรื่อง การนำเสนอ การทำสื่อดิจิทัล</li>
+                            <li><strong>การงานอาชีพ:</strong> ทักษะเกษตรกรรม การคำนวณต้นทุน กำไร</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold font-heading text-primary mb-6 text-center">วิธีดำเนินการให้บรรลุผล (PDCA)</h3>
+            
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 mb-10">
+                
+                <div class="flex flex-col md:flex-row gap-6 mb-8 border-b border-slate-100 pb-6">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold text-2xl flex-shrink-0 shadow-sm border border-emerald-200">P</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2 text-slate-800">Plan (การวางแผน)</h4>
+                        <p class="text-slate-600 text-sm">ศึกษาหลักสูตร บริบทโรงเรียน ชุมชน ภูมิปัญญา วิเคราะห์ผู้เรียน และออกแบบหน่วยการเรียนรู้ "ปลูกผักสวนครัว : มะละกอ" เน้นการปฏิบัติจริง พร้อมจัดเตรียมเครื่องมือวัดผล</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 mb-8 border-b border-slate-100 pb-6">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold text-2xl flex-shrink-0 shadow-sm border border-emerald-200">D</div>
+                    <div class="w-full">
+                        <h4 class="font-bold text-lg mb-4 text-slate-800">Do (การปฏิบัติ - ๗ กิจกรรม)</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100 hover:shadow-md transition-shadow">
+                                <span class="font-bold text-emerald-800 text-sm">๑. รู้จักมะละกอ</span>
+                                <p class="text-xs text-slate-600 mt-1">ศึกษาแหล่งกำเนิด ประโยชน์ คุณค่าอาหาร และภูมิปัญญาในชุมชน</p>
+                            </div>
+                            <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100 hover:shadow-md transition-shadow">
+                                <span class="font-bold text-emerald-800 text-sm">๒. เมล็ดเล็กๆ สู่ต้น</span>
+                                <p class="text-xs text-slate-600 mt-1">คัดเลือกเมล็ด เพาะเมล็ด เตรียมวัสดุปลูก และดูแลต้นกล้า</p>
+                            </div>
+                            <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100 hover:shadow-md transition-shadow">
+                                <span class="font-bold text-emerald-800 text-sm">๓. นักปลูกตัวน้อย</span>
+                                <p class="text-xs text-slate-600 mt-1">ลงมือปลูก ดูแล รดน้ำ ใส่ปุ๋ย กำจัดวัชพืช สังเกตการเปลี่ยนแปลง</p>
+                            </div>
+                            <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100 hover:shadow-md transition-shadow">
+                                <span class="font-bold text-emerald-800 text-sm">๔. วิทย์น้อยนักเกษตร</span>
+                                <p class="text-xs text-slate-600 mt-1">บันทึกข้อมูลการเจริญเติบโต (ความสูง/ใบ) วิเคราะห์สรุปผล</p>
+                            </div>
+                            <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100 hover:shadow-md transition-shadow lg:col-span-2 flex items-center gap-3">
+                                <div><i class="fa-solid fa-star text-amber-400 text-2xl"></i></div>
+                                <div>
+                                    <span class="font-bold text-emerald-800 text-sm">๕-๗. สร้างสรรค์ เล่าเรื่อง & สร้างรายได้ (Soft Power)</span>
+                                    <p class="text-xs text-slate-600 mt-1">ทำเมนูแปรรูป (ส้มตำ) -> ทำสื่อนำเสนอผลงาน -> คำนวณต้นทุน กำไร เชื่อมโยงอาชีพ (Learn to Earn)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-sm border border-emerald-200">C/A</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2 text-slate-800">Check & Act (ตรวจสอบและปรับปรุง)</h4>
+                        <p class="text-slate-600 text-sm">ประเมินทักษะการปฏิบัติ ทักษะการทำงานร่วมกัน การบันทึกวิเคราะห์ และผลงาน นำผลประเมินมาปรับปรุงวิธีการเพาะปลูก การแบ่งหน้าที่ และเผยแพร่ผลงานสู่ผู้ปกครอง/ชุมชน</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Outcomes Comparison -->
+            <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden mb-8 border border-slate-700">
+                <div class="bg-gradient-to-r from-emerald-600 to-teal-500 px-6 py-4 border-b border-emerald-400/30">
+                    <h3 class="text-xl font-bold font-heading text-white flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-scale-balanced"></i> เปรียบเทียบผลลัพธ์: เป้าหมายตามข้อตกลง vs ผลการปฏิบัติจริง
+                    </h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-700">
+                    
+                    <!-- Goal (From PA Agreement) -->
+                    <div class="p-6 bg-slate-800 text-slate-300">
+                        <div class="flex items-center gap-2 mb-4 text-emerald-400">
+                            <i class="fa-regular fa-clipboard text-xl"></i>
+                            <h4 class="font-bold text-lg">เป้าหมาย (ข้อตกลง PA)</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">เชิงปริมาณ</h5>
+                                <ul class="space-y-2 text-sm list-none">
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-bullseye mt-1 text-slate-500 text-xs"></i> นักเรียน <strong>ไม่น้อยกว่าร้อยละ ๘๐</strong> สามารถบันทึก วิเคราะห์ และสรุปผลได้</li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-bullseye mt-1 text-slate-500 text-xs"></i> นักเรียน <strong>ไม่น้อยกว่าร้อยละ ๘๐</strong> สามารถอธิบายการใช้ประโยชน์/เพิ่มมูลค่าได้</li>
+                                </ul>
+                            </div>
+                            <div class="pt-2">
+                                <h5 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">เชิงคุณภาพ</h5>
+                                <p class="text-sm text-slate-300">นักเรียนมีทักษะปฏิบัติงาน, มีทัศนคติที่ดีต่อเกษตรกรรม และมีทักษะชีวิตต่อยอดเศรษฐกิจพอเพียง</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actual (From PA Report) -->
+                    <div class="p-6 bg-emerald-50/5 relative overflow-hidden">
+                        <!-- Decorative glow -->
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 blur-2xl rounded-full"></div>
+                        
+                        <div class="flex items-center gap-2 mb-4 text-emerald-400 relative z-10">
+                            <i class="fa-solid fa-trophy text-xl text-amber-400"></i>
+                            <h4 class="font-bold text-lg text-white">ผลลัพธ์จริง (รายงาน PA)</h4>
+                        </div>
+                        <div class="space-y-4 relative z-10">
+                            <div>
+                                <h5 class="text-sm font-semibold text-emerald-400/80 uppercase tracking-wider mb-2">เชิงปริมาณ (ทะลุเป้าหมาย)</h5>
+                                <ul class="space-y-3 text-sm list-none">
+                                    <li class="flex items-start gap-2 bg-emerald-500/10 p-2 rounded border border-emerald-500/20">
+                                        <i class="fa-solid fa-arrow-trend-up mt-1 text-emerald-400"></i> 
+                                        <span class="text-emerald-50">ผู้เรียน <strong class="text-emerald-300 text-base">ร้อยละ ๘๕</strong> สามารถบันทึก วิเคราะห์ และสรุปผลได้จริง <span class="text-xs bg-emerald-600 text-white px-1.5 rounded ml-1">+๕%</span></span>
+                                    </li>
+                                    <li class="flex items-start gap-2 bg-emerald-500/10 p-2 rounded border border-emerald-500/20">
+                                        <i class="fa-solid fa-arrow-trend-up mt-1 text-emerald-400"></i> 
+                                        <span class="text-emerald-50">ผู้เรียน <strong class="text-emerald-300 text-base">ร้อยละ ๑๐๐</strong> สามารถอธิบายการใช้ประโยชน์/เพิ่มมูลค่าได้ <span class="text-xs bg-emerald-600 text-white px-1.5 rounded ml-1">+๒๐%</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt-2">
+                                <h5 class="text-sm font-semibold text-emerald-400/80 uppercase tracking-wider mb-2">เชิงคุณภาพ (บรรลุครบถ้วน)</h5>
+                                <ul class="space-y-1 text-sm list-none text-emerald-50/80">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> ทักษะการทำกิจกรรมและรับผิดชอบสูงขึ้น</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> ทัศนคติเชิงบวกต่องานเกษตร</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> เกิดทักษะชีวิตพร้อมต่อยอดการทำงาน</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="bg-slate-900/50 px-6 py-3 border-t border-slate-700 text-xs text-slate-400 flex items-center justify-between">
+                    <span><i class="fa-solid fa-folder-open mr-2"></i> ร่องรอยหลักฐาน: ภาพถ่ายกิจกรรม, ผลงานนักเรียน, แบบบันทึกเข้าร่วมกิจกรรม</span>
+                    <span class="bg-emerald-900/50 text-emerald-400 px-2 py-1 rounded border border-emerald-800">ระดับความสำเร็จ: ดีเยี่ยม</span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 py-8 text-center text-sm border-t-4 border-primary">
+        <p class="mb-2 font-bold text-white text-base">ขอรับรองว่าเป็นความจริง</p>
+        <p class="mb-2">ผู้รับการประเมิน: นางสาวรัตนา โคตรวิทย์ (ครู วิทยฐานะ ชำนาญการพิเศษ)</p>
+        <p class="mb-4">ผู้รับรอง: นายเชาวนันท์ โสโท (ผู้อำนวยการโรงเรียนบ้านโคกม่วย)</p>
+    </footer>
+
+</body>
+</html>
