@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อตกลงในการพัฒนางาน (PA) - นายธนากร พ่อชมภู</title>
+    
+    <!-- Google Fonts: Sarabun -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // blue-900
+                        secondary: '#3b82f6', // blue-500
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for smooth transitions */
+        .accordion-content {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-content.open {
+            max-height: 5000px; /* arbitrary large number to accommodate content */
+            opacity: 1;
+        }
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header / Banner -->
+    <header class="bg-blue-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                <!-- Profile Image -->
+                <div class="w-32 h-32 md:w-40 md:h-40 shrink-0 bg-white rounded-full p-1 shadow-lg overflow-hidden border-4 border-blue-400">
+                    <img 
+                        src="290326.jpg" 
+                        alt="นายธนากร พ่อชมภู" 
+                        class="w-full h-full object-cover rounded-full"
+                        onerror="this.onerror=null; this.src='https://placehold.co/150x150/e2e8f0/475569?text=Profile';"
+                    />
+                </div>
+                
+                <!-- Profile Details -->
+                <div class="text-center md:text-left flex-1">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2">ข้อตกลงในการพัฒนางาน (PA)</h1>
+                    <p class="text-xl text-blue-200 mb-4">สำหรับข้าราชการครูและบุคลากรทางการศึกษา</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 mt-4 text-sm bg-blue-800/50 p-5 rounded-xl">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-user text-blue-300 w-5 text-center"></i> 
+                            <span class="font-semibold text-blue-200">ชื่อ-สกุล:</span> นายธนากร พ่อชมภู
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-briefcase text-blue-300 w-5 text-center"></i> 
+                            <span class="font-semibold text-blue-200">ตำแหน่ง:</span> รองผู้อำนวยการสถานศึกษา
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-award text-blue-300 w-5 text-center"></i> 
+                            <span class="font-semibold text-blue-200">วิทยฐานะ:</span> รองผู้อำนวยการชำนาญการ
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-school text-blue-300 w-5 text-center"></i> 
+                            <span class="font-semibold text-blue-200">สถานศึกษา:</span> โรงเรียนบ้านฝั่งแดง (พระเทพวรมุนีอุปถัมภ์)
+                        </div>
+                        <div class="flex items-center gap-3 md:col-span-2">
+                            <i class="fas fa-calendar-alt text-blue-300 w-5 text-center"></i> 
+                            <span class="font-semibold text-blue-200">ประจำปีงบประมาณ:</span> พ.ศ. 2569 (1 ต.ค. 2568 - 30 ก.ย. 2569)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+
+        <!-- ข้อมูลพื้นฐาน Section -->
+        <section class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <button class="accordion-btn w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors border-b border-gray-200 focus:outline-none">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-file-alt text-blue-600 text-xl"></i>
+                    <h2 class="text-xl font-bold text-gray-800">ข้อมูลพื้นฐานสถานศึกษาและภาระงาน</h2>
+                </div>
+                <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300 transform rotate-180"></i>
+            </button>
+            
+            <div class="accordion-content open">
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700 mb-4 border-b pb-2 flex items-center gap-2">
+                                <i class="fas fa-building text-gray-400"></i> ประเภทสถานศึกษา
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check-circle text-green-500"></i> สถานศึกษาที่จัดการศึกษาขั้นพื้นฐาน</li>
+                                <li class="flex items-center gap-2 text-gray-600 ml-6"><i class="fas fa-check-circle text-green-500"></i> ระดับปฐมวัย</li>
+                                <li class="flex items-center gap-2 text-gray-600 ml-6"><i class="fas fa-check-circle text-green-500"></i> ระดับประถมศึกษา</li>
+                                <li class="flex items-center gap-2 text-gray-600 ml-6"><i class="fas fa-check-circle text-green-500"></i> ระดับมัธยมศึกษาตอนต้น</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700 mb-4 border-b pb-2 flex items-center gap-2">
+                                <i class="fas fa-chart-line text-gray-400"></i> ภาระงาน (เต็มเวลา)
+                            </h3>
+                            <p class="text-sm text-gray-500 mb-3">การปฏิบัติการสอน ไม่ต่ำกว่า 15 ชั่วโมง/สัปดาห์</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2 text-gray-600">
+                                    <i class="fas fa-check-circle text-blue-500 shrink-0 mt-1"></i> 
+                                    <span>สังเกตการสอนและสะท้อนผลการสอนร่วมกับครูในกิจกรรมเปิดชั้นเรียน <strong class="text-blue-700">5 ชม./สัปดาห์</strong></span>
+                                </li>
+                                <li class="flex items-start gap-2 text-gray-600">
+                                    <i class="fas fa-check-circle text-blue-500 shrink-0 mt-1"></i> 
+                                    <span>ผู้นำกิจกรรมแลกเปลี่ยนเรียนรู้ในชุมชนการเรียนรู้ทางวิชาชีพ (PLC) <strong class="text-blue-700">4 ชม./สัปดาห์</strong></span>
+                                </li>
+                                <li class="flex items-start gap-2 text-gray-600">
+                                    <i class="fas fa-check-circle text-blue-500 shrink-0 mt-1"></i> 
+                                    <span>นิเทศการสอนเพื่อเป็นพี่เลี้ยงการจัดกิจกรรมการเรียนรู้ <strong class="text-blue-700">5 ชม./สัปดาห์</strong></span>
+                                </li>
+                                 <li class="flex items-start gap-2 text-gray-600">
+                                    <i class="fas fa-check-circle text-blue-500 shrink-0 mt-1"></i> 
+                                    <span>จัดกิจกรรมเสริมการเรียนรู้และอบรมบ่มนิสัยผู้เรียน <strong class="text-blue-700">1 ชม./สัปดาห์</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ส่วนที่ 1: มาตรฐานตำแหน่ง -->
+        <section class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <button class="accordion-btn w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors border-b border-gray-200 focus:outline-none">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-bullseye text-blue-600 text-xl"></i>
+                    <h2 class="text-xl font-bold text-gray-800">ส่วนที่ 1: ข้อตกลงในการพัฒนางานตามมาตรฐานตำแหน่ง</h2>
+                </div>
+                <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300 transform rotate-180"></i>
+            </button>
+            
+            <div class="accordion-content open">
+                <div class="divide-y divide-gray-100">
+                    
+                    <!-- ด้านที่ 1 -->
+                    <div class="p-6 hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 bg-blue-50 rounded-lg text-blue-600"><i class="fas fa-book-open text-xl"></i></div>
+                            <h3 class="text-lg font-bold text-gray-800">1. ด้านการบริหารวิชาการและความเป็นผู้นำทางวิชาการ</h3>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-blue-800 mb-3 border-b pb-2"><i class="fas fa-tasks mr-2"></i>งาน (Tasks) ที่จะดำเนินการ</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li class="leading-relaxed">1.1 วางแผนพัฒนามาตรฐานการเรียนรู้ของผู้เรียน จัดทำแผนพัฒนาคุณภาพการศึกษาในฐานะชุมชนแห่งการเรียนรู้ทางวิชาชีพ</li>
+                                    <li class="leading-relaxed">1.2 การจัดทำและพัฒนาหลักสูตรสถานศึกษา</li>
+                                    <li class="leading-relaxed">1.3 การพัฒนากระบวนการจัดการเรียนรู้ที่เน้นผู้เรียนเป็นสำคัญและปฏิบัติการสอน</li>
+                                    <li class="leading-relaxed">1.4 การส่งเสริม สนับสนุน การพัฒนาหรือการนำสื่อ นวัตกรรม และเทคโนโลยีทางการศึกษามาใช้ในการจัดการเรียนรู้</li>
+                                    <li class="leading-relaxed">1.5 การนิเทศ กำกับ ติดตาม ประเมินผลการจัดการเรียนรู้ของครูในสถานศึกษา และมีการประกันคุณภาพการศึกษาภายในสถานศึกษา</li>
+                                    <li class="leading-relaxed">1.6 การศึกษา วิเคราะห์ เพื่อแก้ปัญหาและพัฒนาการจัดการเรียนรู้ เพื่อยกระดับคุณภาพการศึกษาของสถานศึกษา</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-green-800 mb-3 border-b pb-2"><i class="fas fa-flag-checkered mr-2"></i>ผลลัพธ์ (Outcomes)</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li class="leading-relaxed">มีการกำหนดมาตรฐานการเรียนรู้ของผู้เรียนที่สอดคล้องกับนโยบาย</li>
+                                    <li class="leading-relaxed">มีแผนพัฒนาคุณภาพการศึกษา แผนงาน/โครงการโรงเรียนในฐานะชุมชนแห่งการเรียนรู้</li>
+                                    <li class="leading-relaxed">มีการจัดทำหลักสูตรสถานศึกษา พัฒนาให้ทันสมัย</li>
+                                    <li class="leading-relaxed">ส่งเสริมพัฒนาครูจัดการเรียนรู้ที่เน้นผู้เรียนเป็นสำคัญ</li>
+                                    <li class="leading-relaxed">ส่งเสริมครูให้มีการนำสื่อ ผลิตสื่อนำนวัตกรรมและเทคโนโลยีทางการศึกษามาใช้</li>
+                                    <li class="leading-relaxed">มีโครงการนิเทศภายในโรงเรียน พัฒนารูปแบบการนิเทศภายใน</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-purple-800 mb-3 border-b pb-2"><i class="fas fa-chart-bar mr-2"></i>ตัวชี้วัด (Indicators)</h4>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">1.</span><span class="leading-relaxed">นักเรียนร้อยละ 90 ผ่านการประเมินตามมาตรฐานการเรียนรู้</span></li>
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">2.</span><span class="leading-relaxed">ครูร้อยละ 90 มีความตระหนักและปฏิบัติตามหน้าที่อย่างเต็มศักยภาพ</span></li>
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">3.</span><span class="leading-relaxed">โรงเรียนพัฒนาตามแนวทางโรงเรียนในฐานะชุมชนแห่งการเรียนรู้</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ด้านที่ 2 -->
+                    <div class="p-6 hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 bg-green-50 rounded-lg text-green-600"><i class="fas fa-building text-xl"></i></div>
+                            <h3 class="text-lg font-bold text-gray-800">2. ด้านการบริหารจัดการสถานศึกษา</h3>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-blue-800 mb-3 border-b pb-2"><i class="fas fa-tasks mr-2"></i>งาน (Tasks)</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li class="leading-relaxed">2.1 บริหารจัดการสถานศึกษาด้านงานวิชาการ งานบุคคล งบประมาณ บริหารทั่วไป</li>
+                                    <li class="leading-relaxed">2.2 การบริหารกิจการผู้เรียนและการส่งเสริมพัฒนาผู้เรียน</li>
+                                    <li class="leading-relaxed">2.3 การจัดระบบดูแลช่วยเหลือผู้เรียน</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-green-800 mb-3 border-b pb-2"><i class="fas fa-flag-checkered mr-2"></i>ผลลัพธ์ (Outcomes)</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li class="leading-relaxed">มีคู่มือการบริหารจัดการสถานศึกษาทั้ง 4 ฝ่าย</li>
+                                    <li class="leading-relaxed">มีคณะกรรมการนักเรียนจากการมีส่วนร่วมของนักเรียน</li>
+                                    <li class="leading-relaxed">จัดระบบดูแลช่วยเหลือนักเรียนตามกระบวนการ 5 ขั้นตอน</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-purple-800 mb-3 border-b pb-2"><i class="fas fa-chart-bar mr-2"></i>ตัวชี้วัด (Indicators)</h4>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">1.</span><span class="leading-relaxed">นักเรียนร้อยละ 100 เกิดความเชื่อมั่นและภาคภูมิใจ</span></li>
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">2.</span><span class="leading-relaxed">ครูร้อยละ 90 ปฏิบัติงานตามที่ได้รับมอบหมายตามบทบาทหน้าที่</span></li>
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">3.</span><span class="leading-relaxed">มีการบริหารงานที่เป็นระบบ เป็นไปตามกฎหมาย</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ด้านที่ 3 -->
+                    <div class="p-6 hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 bg-yellow-50 rounded-lg text-yellow-600"><i class="fas fa-lightbulb text-xl"></i></div>
+                            <h3 class="text-lg font-bold text-gray-800">3. ด้านการบริหารการเปลี่ยนแปลงเชิงกลยุทธ์และนวัตกรรม</h3>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-blue-800 mb-3 border-b pb-2"><i class="fas fa-tasks mr-2"></i>งาน (Tasks)</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li class="leading-relaxed">3.1 การกำหนดนโยบาย กลยุทธ์การใช้เครื่องมือหรือนวัตกรรมทางการบริหาร</li>
+                                    <li class="leading-relaxed">3.2 การบริหารการเปลี่ยนแปลงและนวัตกรรมในสถานศึกษาเพื่อพัฒนาสถานศึกษา</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-green-800 mb-3 border-b pb-2"><i class="fas fa-flag-checkered mr-2"></i>ผลลัพธ์ (Outcomes)</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li class="leading-relaxed">มีการกำหนดนโยบาย วิสัยทัศน์ในการพัฒนา</li>
+                                    <li class="leading-relaxed">พัฒนานวัตกรรม รูปแบบการพัฒนาการจัดการเรียนรู้</li>
+                                    <li class="leading-relaxed">นำนวัตกรรมและเทคโนโลยีดิจิทัลมาประยุกต์ใช้</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-purple-800 mb-3 border-b pb-2"><i class="fas fa-chart-bar mr-2"></i>ตัวชี้วัด (Indicators)</h4>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">1.</span><span class="leading-relaxed">นักเรียนร้อยละ 90 ได้รับการพัฒนาทุกมิติตรงตามหลักสูตร</span></li>
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">2.</span><span class="leading-relaxed">ครูร้อยละ 90 จัดการเรียนการสอนตรงตามหลักสูตร</span></li>
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">3.</span><span class="leading-relaxed">มีโมเดลในการบริหารจัดการสถานศึกษา</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ด้านที่ 4 -->
+                    <div class="p-6 hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 bg-purple-50 rounded-lg text-purple-600"><i class="fas fa-users text-xl"></i></div>
+                            <h3 class="text-lg font-bold text-gray-800">4. ด้านการบริหารงานชุมชนและเครือข่าย</h3>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-blue-800 mb-3 border-b pb-2"><i class="fas fa-tasks mr-2"></i>งาน (Tasks)</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li class="leading-relaxed">4.1 การสร้างและพัฒนาเครือข่ายเพื่อพัฒนาการเรียนรู้</li>
+                                    <li class="leading-relaxed">4.2 การจัดระบบการให้บริการในสถานศึกษา</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-green-800 mb-3 border-b pb-2"><i class="fas fa-flag-checkered mr-2"></i>ผลลัพธ์ (Outcomes)</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li class="leading-relaxed">มีคณะกรรมการสถานศึกษาขั้นพื้นฐานและเครือข่ายผู้ร่วมพัฒนาโรงเรียน</li>
+                                    <li class="leading-relaxed">มีการให้บริการและระบบสารสนเทศที่ดี ทันสมัย</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-purple-800 mb-3 border-b pb-2"><i class="fas fa-chart-bar mr-2"></i>ตัวชี้วัด (Indicators)</h4>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">1.</span><span class="leading-relaxed">นักเรียนร้อยละ 90 มีคุณลักษณะอันพึงประสงค์</span></li>
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">2.</span><span class="leading-relaxed">ครูร้อยละ 90 มีขวัญและกำลังใจจากการได้รับการสนับสนุนจากผู้ปกครอง</span></li>
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">3.</span><span class="leading-relaxed">สถานศึกษามีความเข้มแข็ง และได้รับการสนับสนุนจากชุมชน</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ด้านที่ 5 -->
+                    <div class="p-6 hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 bg-red-50 rounded-lg text-red-600"><i class="fas fa-award text-xl"></i></div>
+                            <h3 class="text-lg font-bold text-gray-800">5. ด้านการพัฒนาตนเองและวิชาชีพ</h3>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-blue-800 mb-3 border-b pb-2"><i class="fas fa-tasks mr-2"></i>งาน (Tasks)</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li class="leading-relaxed">5.1 การพัฒนาตนเองและวิชาชีพ</li>
+                                    <li class="leading-relaxed">5.2 การนำความรู้ทักษะ ที่ได้จากการพัฒนาตนเอง และวิชาชีพมาใช้ในการพัฒนาการบริหารจัดการสถานศึกษา</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-green-800 mb-3 border-b pb-2"><i class="fas fa-flag-checkered mr-2"></i>ผลลัพธ์ (Outcomes)</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                                    <li class="leading-relaxed">พัฒนาตนเองและวิชาชีพ ด้านเทคโนโลยีดิจิตอล</li>
+                                    <li class="leading-relaxed">นำความรู้ ทักษะ มาใช้ในการพัฒนาการบริหารจัดการสถานศึกษา</li>
+                                    <li class="leading-relaxed">พัฒนารูปแบบการบริหารจัดการเรียนรู้ออนไลน์</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                                <h4 class="font-semibold text-purple-800 mb-3 border-b pb-2"><i class="fas fa-chart-bar mr-2"></i>ตัวชี้วัด (Indicators)</h4>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">1.</span><span class="leading-relaxed">นักเรียนร้อยละ 100 เกิดความภาคภูมิใจ เชื่อมั่นในครู</span></li>
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">2.</span><span class="leading-relaxed">ครูร้อยละ 100 เกิดความเชื่อมั่น ภาคภูมิใจในตนเอง</span></li>
+                                    <li class="flex gap-2"><span class="font-bold text-purple-500">3.</span><span class="leading-relaxed">สถานศึกษาเกิดการเปลี่ยนแปลงไปในทิศทางที่ดี</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ส่วนที่ 2: ประเด็นท้าทาย -->
+        <section class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <button class="accordion-btn w-full flex justify-between items-center p-5 bg-indigo-50 hover:bg-indigo-100 transition-colors border-b border-indigo-100 focus:outline-none">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-lightbulb text-indigo-600 text-xl"></i>
+                    <h2 class="text-xl font-bold text-indigo-900">ส่วนที่ 2: ประเด็นท้าทายในการพัฒนาคุณภาพผู้เรียน ครู และสถานศึกษา</h2>
+                </div>
+                <i class="fas fa-chevron-down text-indigo-500 transition-transform duration-300"></i> <!-- Initially closed -->
+            </button>
+            
+            <div class="accordion-content"> <!-- No 'open' class by default -->
+                <div class="p-6 md:p-8">
+                    <!-- ประเด็นท้าทาย Highlight -->
+                    <div class="bg-indigo-900 text-white p-6 rounded-xl shadow-inner mb-8">
+                        <h3 class="text-indigo-200 font-medium mb-2 uppercase tracking-wider text-sm">ประเด็นท้าทาย</h3>
+                        <p class="text-xl md:text-2xl font-bold leading-relaxed">
+                            "การนิเทศภายในโดยใช้ห้องเรียนเป็นฐานเพื่อพัฒนาสมรรถนะครูด้านการจัดการเรียนรู้เชิงรุก Active Learning <span class="text-yellow-300">‘ฝั่งแดงนิเทศวิถี’</span> โดยใช้รูปแบบ SPACE 4Q Model ผ่าน 3 กิจกรรม"
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <i class="fas fa-exclamation-triangle text-indigo-500"></i> สภาพปัญหา
+                            </h4>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                การนิเทศภายในสถานศึกษามีความแตกต่างกัน ขาดความต่อเนื่องและความเป็นเอกภาพ ไม่สอดคล้องกับบริบทพื้นที่ เพื่อให้ทันต่อการเปลี่ยนแปลงและพัฒนาผู้เรียนในศตวรรษที่ 21 โรงเรียนบ้านฝั่งแดงจึงพัฒนาระบบการนิเทศให้เข้มแข็ง ต่อเนื่อง จนเป็นวัฒนธรรมองค์กร
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <i class="fas fa-trophy text-indigo-500"></i> เป้าหมาย 4Q
+                            </h4>
+                            <ul class="space-y-3 text-sm text-gray-700">
+                                <li><strong class="text-indigo-700">Student Quality:</strong> ผู้เรียนมีคุณภาพตามมาตรฐาน</li>
+                                <li><strong class="text-indigo-700">Teacher Quality:</strong> ครูมีจิตวิญญาณและทักษะในศตวรรษที่ 21</li>
+                                <li><strong class="text-indigo-700">Director Quality:</strong> ผู้บริหารมีวิสัยทัศน์ นำเทคโนโลยีมาใช้</li>
+                                <li><strong class="text-indigo-700">School Quality:</strong> โรงเรียนมีคุณภาพตามเกณฑ์มาตรฐาน</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SPACE 4Q Model Process -->
+                    <h4 class="text-xl font-bold text-center text-indigo-900 mb-10 mt-10 border-t border-gray-200 pt-10">
+                        กระบวนการนิเทศ "ฝั่งแดงนิเทศวิถี"
+                    </h4>
+                    
+                    <div class="relative max-w-4xl mx-auto">
+                        <!-- Vertical line for timeline -->
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-indigo-100"></div>
+                        
+                        <div class="space-y-8 relative">
+                            <!-- S -->
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <div class="w-full md:w-5/12 md:text-right">
+                                    <div class="bg-white p-5 rounded-xl shadow-md border border-gray-100 inline-block w-full">
+                                        <h5 class="font-bold text-xl text-indigo-600 mb-2">S : Survey</h5>
+                                        <p class="text-sm text-gray-600">ศึกษาสภาพปัจจุบัน ปัญหา และความต้องการ วิเคราะห์ข้อมูล ตัวบ่งชี้คุณภาพ และจัดลำดับความสำคัญของปัญหา</p>
+                                    </div>
+                                </div>
+                                <div class="w-14 h-14 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-2xl z-10 shadow-lg shrink-0 ring-4 ring-white">S</div>
+                                <div class="w-full md:w-5/12"></div>
+                            </div>
+
+                            <!-- P -->
+                            <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-4">
+                                <div class="w-full md:w-5/12">
+                                    <div class="bg-white p-5 rounded-xl shadow-md border border-gray-100 inline-block w-full">
+                                        <h5 class="font-bold text-xl text-blue-600 mb-2">P : Planning</h5>
+                                        <p class="text-sm text-gray-600">วางแผนการนิเทศ กำหนดตัวชี้วัด (KPI) จัดทำปฏิทินการนิเทศ ติดตามและประเมินผลร่วมกัน</p>
+                                    </div>
+                                </div>
+                                <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-2xl z-10 shadow-lg shrink-0 ring-4 ring-white">P</div>
+                                <div class="w-full md:w-5/12"></div>
+                            </div>
+
+                            <!-- A -->
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <div class="w-full md:w-5/12 md:text-right">
+                                    <div class="bg-white p-5 rounded-xl shadow-md border border-gray-100 inline-block w-full">
+                                        <h5 class="font-bold text-xl text-teal-600 mb-2">A : Appliance</h5>
+                                        <p class="text-sm text-gray-600">สื่อและเครื่องมือนิเทศ ผ่าน 3 กิจกรรมหลัก: PLC, Lesson Study & Open Approach, และ Active Learning (CO-5STEPs)</p>
+                                    </div>
+                                </div>
+                                <div class="w-14 h-14 bg-teal-600 rounded-full flex items-center justify-center text-white font-bold text-2xl z-10 shadow-lg shrink-0 ring-4 ring-white">A</div>
+                                <div class="w-full md:w-5/12"></div>
+                            </div>
+
+                            <!-- C -->
+                            <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-4">
+                                <div class="w-full md:w-5/12">
+                                    <div class="bg-white p-5 rounded-xl shadow-md border border-gray-100 inline-block w-full">
+                                        <h5 class="font-bold text-xl text-orange-500 mb-2">C : Coaching</h5>
+                                        <p class="text-sm text-gray-600">การนิเทศแบบโค้ช (กัลยาณมิตร) บันทึกกิจกรรม สะท้อนผล และปรับปรุงพัฒนาการดำเนินงาน</p>
+                                    </div>
+                                </div>
+                                <div class="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-2xl z-10 shadow-lg shrink-0 ring-4 ring-white">C</div>
+                                <div class="w-full md:w-5/12"></div>
+                            </div>
+
+                            <!-- E -->
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <div class="w-full md:w-5/12 md:text-right">
+                                    <div class="bg-white p-5 rounded-xl shadow-md border border-gray-100 inline-block w-full">
+                                        <h5 class="font-bold text-xl text-rose-500 mb-2">E : Evaluation</h5>
+                                        <p class="text-sm text-gray-600">การประเมินผลการนิเทศ รายงานผล และนำผลที่เป็นปัญหาไปพัฒนาการนิเทศในครั้งต่อไป</p>
+                                    </div>
+                                </div>
+                                <div class="w-14 h-14 bg-rose-500 rounded-full flex items-center justify-center text-white font-bold text-2xl z-10 shadow-lg shrink-0 ring-4 ring-white">E</div>
+                                <div class="w-full md:w-5/12"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signatures Section -->
+        <div class="mt-12 bg-white p-8 rounded-xl shadow-sm border border-gray-200 flex flex-col md:flex-row justify-around items-center gap-10 text-center">
+            <div class="w-full md:w-auto">
+                <div class="h-20 mb-2 flex items-center justify-center">
+                    <span class="italic text-gray-400 font-serif text-2xl border-b border-dashed border-gray-300 px-8 pb-2">ธนากร พ่อชมภู</span>
+                </div>
+                <p class="font-bold text-gray-800 text-lg">(นายธนากร พ่อชมภู)</p>
+                <p class="text-sm text-gray-600 mt-1">ผู้จัดทำข้อตกลงในการพัฒนางาน</p>
+                <p class="text-sm text-gray-400 mt-2"><i class="far fa-calendar-alt mr-1"></i> 5 ตุลาคม 2568</p>
+            </div>
+            
+            <div class="hidden md:block w-px h-32 bg-gray-200"></div>
+            
+            <div class="w-full md:w-auto">
+                <div class="mb-2 text-center md:text-left space-y-1">
+                     <div class="flex items-center justify-center md:justify-start gap-2 text-sm text-green-600 font-semibold">
+                         <i class="fas fa-check-circle"></i> เห็นชอบให้เป็นข้อตกลง
+                     </div>
+                </div>
+                <div class="h-16 mb-2 flex items-center justify-center">
+                     <span class="italic text-gray-400 font-serif text-2xl border-b border-dashed border-gray-300 px-8 pb-2">จาสิริ มณีพงศกร</span>
+                </div>
+                <p class="font-bold text-gray-800 text-lg">(นางสาวจาสิริ มณีพงศกร)</p>
+                <p class="text-sm text-gray-600 mt-1">ผู้อำนวยการโรงเรียนบ้านฝั่งแดง (พระเทพวรมุนีอุปถัมภ์)</p>
+                <p class="text-sm text-gray-400 mt-2"><i class="far fa-calendar-alt mr-1"></i> 5 ตุลาคม 2568</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-gray-800 text-gray-400 text-center py-8 text-sm mt-12 border-t-4 border-blue-600">
+        <p class="mb-1">เอกสารข้อตกลงในการพัฒนางาน (PA) ปีงบประมาณ 2569</p>
+        <p>โรงเรียนบ้านฝั่งแดง (พระเทพวรมุนีอุปถัมภ์) สพป.นครพนม เขต 1</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select all accordion buttons
+            const accordionBtns = document.querySelectorAll('.accordion-btn');
+
+            accordionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Find the content immediately following the button
+                    const content = this.nextElementSibling;
+                    
+                    // Find the icon inside the button
+                    const icon = this.querySelector('.fa-chevron-down');
+
+                    // Toggle the 'open' class on the content
+                    content.classList.toggle('open');
+                    
+                    // Toggle rotation on the icon
+                    if (content.classList.contains('open')) {
+                        icon.classList.add('rotate-180');
+                    } else {
+                        icon.classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
